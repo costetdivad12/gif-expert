@@ -1,31 +1,38 @@
-import { async } from 'q';
-import React from 'react'
+
+import React, { useState,useEffect } from 'react'
+import { getGifs } from '../helpers/getGifs';
+import GifGrillItem from './GifGrillItem';
 
 const GifGrill = ({ categoria}) => {
 
-const getGif= async()=>{
-    const url ='https://api.giphy.com/v1/gifs/search?api_key=lw5xvXct2yHz0sIOiY3jptzjYWPNu3hP&q=matute&limit=2';
+  // const [Count, setCount] = useState(0); 
+  // const contar = ()=>{
+    //   setCount(Count+1);
+    // }
+    const [Images, setImages] = useState([]);
+    useEffect(()=>{
+       getGifs(categoria).then((img)=>{setImages(img)} );
+     },[categoria]);
 
-    const respuesta = await fetch(url);
 
-    const {data} = await respuesta.json();
 
-    const gifs =data.map((img)=>{
-       return  {
-           id:img.id,
-           title:img.title,
-           url:img.images?.downsized_medium.url
-       }
-    });
-    console.log(gifs);
-
-}
-  getGif();
 
 
   return (
-    <>
-    <li >{categoria}</li>
+    < >
+    <h3 >{categoria}</h3>
+     <div className='card-grid'>
+    { 
+          Images.map( ( img )=>(
+                // <li key={id}>{title}</li>
+                <GifGrillItem
+                key={img.id}
+                {...img} />
+           ))
+        }
+    {/* <h3>{Count}</h3> */}
+    {/* <button onClick={contar}>Contar</button> */}
+    </div>
     </>
   )
 }

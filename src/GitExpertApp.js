@@ -6,7 +6,7 @@ import GifGrill from './components/GifGrill';
 const GitExpertApp = props => {
 
   //  const categorias =['Sistemas','Pagos','Administracion'];
-  const [categorias, setCategorias] = useState(['Sistemas','Pagos','Administracion']);
+  const [categorias, setCategorias] = useState(['Sistemas']);
 
   // const handleAdd=()=>{
   //   //puede que se use de esta forma 

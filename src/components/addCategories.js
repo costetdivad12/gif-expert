@@ -23,7 +23,7 @@ const AddCategories = ({setCategorias}) => {
   return (
     <>
       <form onSubmit={handleSummit}>
-      <h3>{text}</h3>
+      <h3>{text}</h3>     
       <input type="text" value={inputValue} onChange={handleInputChage} />
       </form>
     </>
