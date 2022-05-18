@@ -11,3 +11,10 @@ body {
 *{
   font-family: Arial, Helvetica, sans-serif;
 }
+
+input{
+  color: gray;
+  font-size: 1.3rem;
+  width: 100%;
+
+}

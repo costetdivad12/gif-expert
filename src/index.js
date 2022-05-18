@@ -8,6 +8,7 @@ import GitExpertApp from './GitExpertApp'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <GitExpertApp/>
+    
 );
 
 
